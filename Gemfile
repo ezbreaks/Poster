@@ -58,3 +58,4 @@ gem 'devise'
 gem 'dotenv-rails', groups: [:development]
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'validates_timeliness', '~> 3.0'
