@@ -56,3 +56,4 @@ gem 'simple_form', '~> 3.2'
 gem 'devise'
 
 gem 'dotenv-rails', groups: [:development]
+gem 'omniauth-twitter'
