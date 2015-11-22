@@ -45,3 +45,11 @@ group :development do
   gem 'spring'
 end
 
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0' # For tooltips and popovers
+end
+
+gem "font-awesome-rails"
+gem 'simple_form', '~> 3.2'
