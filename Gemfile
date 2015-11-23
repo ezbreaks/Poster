@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -64,3 +64,6 @@ gem 'momentjs-rails', '~> 2.9'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 gem 'twitter'
 gem "koala", "~> 2.2"
+
+gem 'delayed_job_active_record'
+gem 'delayed-web'
