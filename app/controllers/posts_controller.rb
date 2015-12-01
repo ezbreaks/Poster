@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+before_action :set_post, only: [:cancel]
 
   def new
     if current_user.connections.any?
@@ -19,10 +20,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def cancel
+    @post.update(state: 'canceled')
+    redirect_to dashboard_path, notice: 'Post was successfully canceled'
+  end
+
   private
 
-  def set
-
+  def set_post
+    @post = Post.find(params[:id])
   end
 
   def post_params

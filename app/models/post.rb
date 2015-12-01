@@ -17,11 +17,13 @@ class Post < ActiveRecord::Base
 
   def display
     begin
-      if facebook == true
-        to_facebook
-      end
-      if twitter == true
-        to_twitter
+      unless state == 'cenceled'
+        if facebook == true
+          to_facebook
+        end
+        if twitter == true
+          to_twitter
+        end
       end
       self.update_attributes(state: 'Posted')
     rescue Exception => e
@@ -43,6 +45,13 @@ class Post < ActiveRecord::Base
     graph = Koala::Facebook::API.new(self.user.facebook.oauth_token)
     graph.put_connections("me", "feed", message: self.content)
   end
+
+  # def to_pages
+  #   koala = Koala::Facebook::API.new(@access_token)
+  #   # retrieve collection fo all your managed pages: returns collection o
+  #   #f hashes with page id, name, category, access token and permissions
+  #   pages = @user_graph.get_connections('me', 'accounts')
+  # end
 
 
 
