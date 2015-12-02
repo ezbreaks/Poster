@@ -6,7 +6,7 @@
     <%= f.input :scheduled_at, required: true, as: :datetime_picker %>
   </div>
 
-  <div class="form-inputs">
+  <!-- <div class="form-inputs">
     <% if current_user.connections.where(provider: "facebook").any? %>
     <%= f.input :facebook %>
     <% end %>
@@ -14,7 +14,12 @@
     <% if current_user.connections.where(provider: "twitter").any? %>
     <%= f.input :twitter %>
     <% end %>
-  </div>
+  </div> -->
+
+  <% current_user.connections.each do |connection| %>
+    <!-- <%= f.input :twitter %> -->
+    <%= f.input :twitter, :label => connection.name  %>
+  <% end %>
 
   <div class="form-actions">
     <%= f.button :submit %>

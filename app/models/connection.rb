@@ -5,7 +5,8 @@ class Connection < ActiveRecord::Base
     create(
     provider: auth_hash.provider,
     oauth_token: auth_hash.credentials.token,
-    secret: auth_hash.credentials.secret
+    secret: auth_hash.credentials.secret,
+    name: auth_hash.info.name
     )
   end
 end
