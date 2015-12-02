@@ -46,13 +46,6 @@ class Post < ActiveRecord::Base
     graph.put_connections("me", "feed", message: self.content)
   end
 
-  # def to_pages
-  #   koala = Koala::Facebook::API.new(@access_token)
-  #   # retrieve collection fo all your managed pages: returns collection o
-  #   #f hashes with page id, name, category, access token and permissions
-  #   pages = @user_graph.get_connections('me', 'accounts')
-  # end
-
 
 
 end
